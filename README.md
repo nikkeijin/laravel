@@ -78,7 +78,7 @@ Install PHP using brew:
 brew install php
 ```
 
-Re-install using brew if you already have PHP installed:
+Re-install PHP using brew if you already have PHP installed:
 ```
 brew reinstall php
 ```
