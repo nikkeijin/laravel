@@ -61,3 +61,27 @@ You run:
 ```
 sail composer require laravel/sanctum
 ```
+
+# Troubleshooting
+
+Problem:
+```
+"No configuration file provided: not found"
+```
+
+Solution:
+```
+php artisan sail:install
+```
+    
+OR    
+    
+Install:   
+```
+brew install php
+```
+
+Re-install if you already have php installed:
+```
+brew reinstall php
+```
