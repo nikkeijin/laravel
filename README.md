@@ -64,12 +64,14 @@ sail composer require laravel/sanctum
 
 # Troubleshooting
 
-> Problem:
+If you face the following problem after running the command to download Laravel via Sail, you must install/re-install PHP.
+
+> Problem
 ```
 "No configuration file provided: not found"
 ```
 
-> Solution:
+> Solution
 
 Install PHP using brew:   
 ```
