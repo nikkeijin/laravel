@@ -83,7 +83,7 @@ Re-install PHP using brew if you already have PHP installed:
 brew reinstall php
 ```
 
-The solution above failed? Try to uninstall and re-install everything.
+> The solution above failed? Try to uninstall and re-install everything.
 
 Uninstalling Composer
 
