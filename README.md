@@ -82,3 +82,43 @@ Re-install PHP using brew if you already have PHP installed:
 ```
 brew reinstall php
 ```
+
+The solution above failed? Try to uninstall and re-install everything.
+
+Uninstalling Composer
+
+Find where composer is installed with:
+```
+which composer
+```
+An example of uninstalling composer at usr/local/bin:
+```
+cd usr/local/bin
+rm -r composer
+```
+Optional: Deleting the rest of composer files.
+```
+cd /
+cd Users/<hereYourUserName>
+rm -r .composer 
+```
+
+Uninstalling PHP
+
+Find the version of PHP you are using:
+```
+php -v
+```
+
+An example of uninstalling PHP 8.2:
+```
+brew uninstall php@8.2
+OR
+brew uninstall --force php@8.2 
+```
+
+Installing PHP and Composer:
+```
+brew install php
+brew install composer
+```
