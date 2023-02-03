@@ -1,0 +1,159 @@
+# Server Side
+
+> Dependencies
+
+Install the Inertia server-side adapter
+```
+composer require inertiajs/inertia-laravel
+```
+
+> View
+
+Create an app.blade.php inside resource/view with the following code:
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    @vite('resources/js/app.js')
+    @inertiaHead
+  </head>
+  <body>
+    @inertia
+  </body>
+</html>
+```
+
+This template should include your assets, as well as the @inertia and @inertiaHead directives.
+
+# Middleware
+
+```
+sail artisan inertia:middleware
+```
+
+Once the middleware has been published, register the HandleInertiaRequests middleware in your App\Http\Kernel as the last item in your web middleware group.
+
+```
+'web' => [
+    \App\Http\Middleware\HandleInertiaRequests::class,
+],
+```
+
+# Inertia Client Side
+
+> Dependencies
+
+Install the Inertia client-side adapter:
+```
+npm install @inertiajs/vue3
+```
+
+> Vue 3
+
+```
+npm install vue@next
+```
+
+> Initialize the Inertia app
+
+Add the following code into your resource/js/app.js:
+```
+import { createApp, h } from 'vue'
+import { createInertiaApp } from '@inertiajs/vue3'
+
+createInertiaApp({
+  resolve: name => {
+    const pages = import.meta.glob('./Pages/**/*.vue', { eager: true })
+    return pages[`./Pages/${name}.vue`]
+  },
+  setup({ el, App, props, plugin }) {
+    createApp({ render: () => h(App, props) })
+      .use(plugin)
+      .mount(el)
+  },
+})
+```
+
+> Vite
+
+```
+npm i @vitejs/plugin-vue
+```
+
+Update vite.config.js file:
+```
+import { defineConfig } from "vite";
+import laravel from "laravel-vite-plugin";
+import vue from "@vitejs/plugin-vue";
+
+export default defineConfig({
+  plugins: [
+    laravel({
+      input: ["resources/css/app.css", "resources/js/app.js"],
+      refresh: true,
+    }),
+    vue({
+      template: {
+        transformAssetUrls: {
+          base: null,
+          includeAbsolute: false,
+        },
+      },
+    }),
+  ],
+});
+```
+
+> Install our dependencies and compile our files
+```
+npm install
+npm run dev
+```
+
+# Pages
+
+Create Pages folder inside resources/js/ then add the pages.    
+
+Example: resources/js/Pages/Index.vue   
+
+Then add the route for.
+
+routes/web.php
+```
+Route::get('/', function () {
+    return Inertia::render('Index');
+});
+```
+
+> Route via controller
+
+route/web.php
+```
+Route::get('/time',[TimeController::class, 'time']);
+```
+
+Create the controller for
+```
+sail artisan make:controller TimeController
+```
+
+app/Http/Controllers/TimeController.php
+```
+namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+
+use Inertia\Inertia;
+use Carbon\Carbon;
+
+class SampleController extends Controller
+{
+    public function sample()
+    {
+        return Inertia::render('Sample',[ 
+            'time' => Carbon::now(),
+        ]);
+    }
+}
+```
