@@ -27,7 +27,7 @@ resource/view/app.blade.php
 
 This template should include your assets, as well as the @inertia and @inertiaHead directives.
 
-# Middleware
+> Middleware
 
 ```
 sail artisan inertia:middleware
