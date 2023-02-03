@@ -73,14 +73,12 @@ If you face the following problem after running the command to download Laravel 
 
 > Solution
 
-Install PHP using brew:   
 ```
-brew install php
+composer install
 ```
 
-Re-install PHP using brew if you already have PHP installed:
 ```
-brew reinstall php
+php artisan sail:install 
 ```
 
 > The solution above failed? Try to uninstall and re-install everything.
