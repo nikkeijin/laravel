@@ -93,6 +93,7 @@ An example of uninstalling composer at usr/local/bin:
 ```
 cd usr/local/bin
 rm -r composer
+brew remove composer -f
 ```
 Optional: Deleting the rest of composer files.
 ```
