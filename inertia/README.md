@@ -9,7 +9,7 @@ composer require inertiajs/inertia-laravel
 
 > View
 
-Create an app.blade.php inside resource/view with the following code:
+resource/view/app.blade.php
 ```
 <!DOCTYPE html>
 <html>
@@ -33,7 +33,7 @@ This template should include your assets, as well as the @inertia and @inerti
 sail artisan inertia:middleware
 ```
 
-Once the middleware has been published, register the HandleInertiaRequests middleware in your App\Http\Kernel as the last item in your web middleware group.
+Once the middleware has been published, register the HandleInertiaRequests middleware in your App\Http\Kernel as the LAST ITEM in your web middleware group.
 
 ```
 'web' => [
@@ -58,7 +58,7 @@ npm install vue@next
 
 > Initialize the Inertia app
 
-Add the following code into your resource/js/app.js:
+resource/js/app.js
 ```
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
@@ -82,7 +82,7 @@ createInertiaApp({
 npm i @vitejs/plugin-vue
 ```
 
-Update vite.config.js file:
+vite.config.js file:
 ```
 import { defineConfig } from "vite";
 import laravel from "laravel-vite-plugin";
