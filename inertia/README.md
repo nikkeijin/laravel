@@ -114,9 +114,9 @@ npm run dev
 
 # Pages
 
-Create Pages folder inside resources/js/ then add the pages.    
+Create Pages folder inside resources/js/
 
-Example: resources/js/Pages/Index.vue   
+As an example: resources/js/Pages/Index.vue   
 
 Then add the route for.
 
