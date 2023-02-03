@@ -41,7 +41,7 @@ Once the middleware has been published, register the HandleInertiaRequests mid
 ],
 ```
 
-# Inertia Client Side
+# Client Side
 
 > Dependencies
 
