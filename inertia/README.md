@@ -82,7 +82,7 @@ createInertiaApp({
 npm i @vitejs/plugin-vue
 ```
 
-vite.config.js file:
+vite.config.js
 ```
 import { defineConfig } from "vite";
 import laravel from "laravel-vite-plugin";
