@@ -122,6 +122,8 @@ Then add the route for.
 
 routes/web.php
 ```
+use Inertia\Inertia;
+
 Route::get('/', function () {
     return Inertia::render('Index');
 });
@@ -131,6 +133,8 @@ Route::get('/', function () {
 
 route/web.php
 ```
+use App\Http\Controllers\TimeController;
+
 Route::get('/time',[TimeController::class, 'time']);
 ```
 
