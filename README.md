@@ -96,8 +96,7 @@ rm -r composer
 ```
 Optional: Deleting the rest of composer files.
 ```
-cd /
-cd Users/<hereYourUserName>
+cd Users/<YourUserName>
 rm -r .composer 
 ```
 
@@ -111,8 +110,6 @@ php -v
 An example of uninstalling PHP 8.2:
 ```
 brew uninstall php@8.2
-OR
-brew uninstall --force php@8.2 
 ```
 
 Installing PHP and Composer:
