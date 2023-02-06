@@ -106,7 +106,7 @@ export default defineConfig({
 });
 ```
 
-> Install our dependencies and compile our files
+# Install our dependencies and compile our files
 ```
 npm install
 npm run dev
