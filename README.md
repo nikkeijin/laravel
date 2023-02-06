@@ -64,7 +64,7 @@ sail composer require laravel/sanctum
 
 # Troubleshooting
 
-If you face the following problem after running the command to download Laravel via Sail, follow the instruction below.
+If you face the following problem after running the command to download Laravel via Sail, go to the directory where you installed the Laravel and follow the instruction below.
 
 > Problem
 ```
