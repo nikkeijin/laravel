@@ -116,9 +116,10 @@ npm run dev
 
 Create Pages folder inside resources/js/
 
-As an example: resources/js/Pages/Index.vue   
+Example    
+resources/js/Pages/Index.vue   
 
-Then add the route for.
+The route for    
 
 routes/web.php
 ```
@@ -133,31 +134,29 @@ Route::get('/', function () {
 
 route/web.php
 ```
-use App\Http\Controllers\TimeController;
+use App\Http\Controllers\SampleController;
 
-Route::get('/time',[TimeController::class, 'time']);
+Route::get('/sample',[SampleController::class, 'sample']);
 ```
 
 Create the controller for
 ```
-sail artisan make:controller TimeController
+sail artisan make:controller SampleController
 ```
 
-app/Http/Controllers/TimeController.php
+app/Http/Controllers/SampleController.php
 ```
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 
 use Inertia\Inertia;
-use Carbon\Carbon;
 
-class TimeController extends Controller
+class SampleController extends Controller
 {
-    public function time()
+    public function sample()
     {
-        return Inertia::render('Time',[ 
-            'time' => Carbon::now(),
-        ]);
+        return Inertia::render('Sample');
     }
 }
 ```
