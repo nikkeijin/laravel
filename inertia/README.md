@@ -129,7 +129,7 @@ Route::get('/', function () {
 });
 ```
 
-> Route via controller
+> An example of Route via controller
 
 route/web.php
 ```
@@ -151,11 +151,11 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Carbon\Carbon;
 
-class SampleController extends Controller
+class TimeController extends Controller
 {
-    public function sample()
+    public function time()
     {
-        return Inertia::render('Sample',[ 
+        return Inertia::render('Time',[ 
             'time' => Carbon::now(),
         ]);
     }
